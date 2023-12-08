@@ -150,12 +150,12 @@ def main():
                 transformed_data = findAndRemoveWord(transformed_data, word_to_remove)
                 update_image(window, transformed_data)
         elif event == "Increase Size" and image_data is not None:
-            scale_factor += 1
-            transformed_data = resizeImage(transformed_data, scale_factor)
+            scale_factor += 0.1
+            transformed_data = resizeImage(image_data, scale_factor)
             update_image(window, transformed_data)
         elif event == "Decrease Size" and image_data is not None:
             scale_factor = max(0.1, scale_factor - 0.1)
-            transformed_data = resizeImage(transformed_data, scale_factor)
+            transformed_data = resizeImage(image_data, scale_factor)
             update_image(window, transformed_data)
 
     window.close()
